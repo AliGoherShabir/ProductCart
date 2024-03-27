@@ -6,6 +6,7 @@ import {
   incrementCart,
   decrementCart,
   clearCart,
+  removeFromCart,
 } from '../../store/slices/cartSlice';
 import styles from './styles';
 import {CartProduct, Product} from '../../store/types';
@@ -26,7 +27,7 @@ const AddToCartButton: FC<ItemProps> = ({item}): JSX.Element => {
   const count: number = cartItem?.quantity || 0;
 
   const handleAddToCart = () => dispatch(addToCart(item));
-  const handleRemoveFromCart = () => dispatch(clearCart());
+  const handleRemoveFromCart = () => dispatch(removeFromCart(item));
   const handleIncreaseCount = () => dispatch(incrementCart(item));
   const handleDecreaseCount = () => dispatch(decrementCart(item));
 
