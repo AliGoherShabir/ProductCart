@@ -1,0 +1,1 @@
+export const getSecureURL = (url: string): string => url.replace('http://', 'https://');
